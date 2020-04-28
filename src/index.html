@@ -8,38 +8,61 @@
 </head>
 
 <body>
-<div class="head">
-  <h4>Por tipo:</h4>
-  <select id="tipoPoke" class="tipoPoke" name="tipoPoke">
-    <option value="allType">Todos</option>
-    <option value="Grass">Planta</option>
-    <option value="Poison">Veneno</option>
-    <option value="Normal">Normal</option>
-    <option value="Fire">Fuego</option>
-    <option value="Water">Agua</option>
-    <option value="Ice">Hielo</option>
-    <option value="Ground">Tierra</option>
-    <option value="Rock">Roca</option>
-    <option value="Bug">Bicho</option>
-    <option value="Electric">Eléctrico</option>
-    <option value="Fighting">Pelea</option>
-    <option value="Flying">Volador</option>
-    <option value="Psychic">Psíquico</option>
-    <option value="Ghost">Fantasma</option>
-    <option value="Dragon">Dragón</option>
-  </select>
-  <p></p>
-  <h4>Por Orden:</h4>
-  <select id="ordenPoke" class="ordenPoke" name="ordenPoke">
-    <option id="todos" value="Todos">Todos</option>
-    <option id="az" value="A-Z">A-Z</option>
-    <option id="za" value="Z-A">Z-A</option>
-
-  </select>
+  <div class="headSite">
+    <div class="filterOptionBody">
+    <img class="imgLogo" src="./imagenes/logo.png">
+    <div>
+      <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Pokedex</a>
+        <input type="text" placeholder="Buscar">
+      </nav>
+    </div>
+    </div>
+  </div>
+  <div class="filterOption">
+    <div class="filterOptionBody">
+      
+       <select id="ordenPoke" class="ordenPoke" name="ordenPoke">
+          <option id="All" value="All">Ordenar</option>
+          <option id="az" value="A-Z">A-Z</option>
+          <option id="za" value="Z-A">Z-A</option>
+          <option id="descendant" value="151-1">151-1</option> 
+        </select>
+      
+      
+        <select id="tipoPoke" class="tipoPoke" name="tipoPoke">
+          <option value="allType">Por Tipos</option>
+          <option value="Grass">Planta</option>
+          <option value="Poison">Veneno</option>
+          <option value="Normal">Normal</option>
+          <option value="Fire">Fuego</option>
+          <option value="Water">Agua</option>
+          <option value="Ice">Hielo</option>
+          <option value="Ground">Tierra</option>
+          <option value="Rock">Roca</option>
+          <option value="Bug">Bicho</option>
+          <option value="Electric">Eléctrico</option>
+          <option value="Fighting">Pelea</option>
+          <option value="Flying">Volador</option>
+          <option value="Psychic">Psíquico</option>
+          <option value="Ghost">Fantasma</option>
+          <option value="Dragon">Dragón</option>
+        </select>
+           
+      
+        <select id="debility" class="debility" name="debility">
+          <option value="debilidad">Por Debilidad</option>
+        </select>
+      
+    </div>
+  </div>
 </div>
   
-    <div class="contenedor-hijo" id="contenidoTodos">
-<!-- cardtemplate -->
+    <div class="viewCard" id="viewCard">
+      <div class="viewCardCreate" id="viewCardCreate">
+        <!-- cardtemplate -->
+      </div>
     </div>
   <script src="main.js" type="module"></script>
 </body>
