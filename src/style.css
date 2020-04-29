@@ -1,7 +1,9 @@
+
 *{
     margin: 0px;
     padding: 0px;
 }
+
 
 .headSite{
     background: linear-gradient(90deg, #A8DD9C 0%, #24CCAA 100%);  
@@ -61,6 +63,7 @@ select{
 
 }
 
+
 @media screen and (max-width: 768px) {
 	.filterOption, .filterOption .filterOptionBody {
         flex-direction:column;
@@ -69,11 +72,11 @@ select{
 }
 
 
+
 @media screen and (max-width: 400px) {
 	.headSite .marfilterOptionBodygen {
         flex-direction:column;
         justify-content: space-between;
     }
 }
-
 
