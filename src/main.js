@@ -1,5 +1,5 @@
 import Pokemones from "./data/pokemon/pokemon.js";
-import { allPokemon, orderPokemonAz, orderPokemonZa,  } from "./data.js";
+import { allPokemon, orderPokemonAz, orderPokemonZa  } from "./data.js";
 
 const card = document.getElementById("viewCardCreate");
 
@@ -20,15 +20,16 @@ function viewAllPokemon(dataSet) {
                                     <h2>${dataSet[i].name}</h2>
                                     <h3>${dataSet[i].num}</h3>
                                     <img class="imgPokemon" src="${dataSet[i].img}"/>
-                                    <h3>${dataSet[i].type[0]} </h3>
+                                    <h3>${dataSet[i].type.join(" - ")} </h3>
                                 </div>
                             </div>
                             </div>`;
   }
-  card.innerHTML = cardTemplate;
+  card.innerHTML = cardTemplate;  
 }
-viewAllPokemon(allData);
 
+viewAllPokemon(allData);
+//console.log( allData);
 //Ordenar pokemones A-Z / Z-A / Regresar a todos
 const selectElement = document.querySelector(".ordenPoke");
 selectElement.addEventListener("change", (e) => {
