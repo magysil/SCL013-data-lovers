@@ -2,25 +2,7 @@
 export const allPokemon = (dataSet) => {
   const newDataArray = [];
   for (let i = 0; i < dataSet.length; i += 1) {
-    newDataArray.push({
-      id: dataSet[i].id,
-      num: dataSet[i].num,
-      name: dataSet[i].name,
-      img: dataSet[i].img,
-      type: dataSet[i].type, 
-      height: dataSet[i].height,
-      weight: dataSet[i].weight,
-      candy: dataSet[i].candy,
-      candy_count: dataSet[i].candy_count,
-      egg: dataSet[i].egg,
-      spawn_chance: dataSet[i].spawn_chance,
-      avg_spawns: dataSet[i].avg_spawns,
-      spawn_time: dataSet[i].spawn_time,
-      multipliers: dataSet[i].multipliers,
-      weaknesses: dataSet[i].weaknesses,
-      prev_evolution: dataSet[i].prev_evolution,
-      next_evolution: dataSet[i].next_evolution,
-    });
+    newDataArray.push(dataSet[i]);
   }
   return newDataArray;
 };
@@ -28,7 +10,7 @@ export const allPokemon = (dataSet) => {
 //Ordena Pokemones por nombre de la A a la Z
 export const orderPokemonAz = (dataSet)=>{
   const newDataArray = [];
-  for (let i = 0; i < dataSet.length; i += 1) {
+  for (let i = 0; i < dataSet.length; i++) {
     newDataArray.push(dataSet[i]);
   }
   newDataArray.sort((a, b) => {
@@ -46,7 +28,7 @@ export const orderPokemonAz = (dataSet)=>{
 //Ordena Pokemones por nombre de la Z a la A
 export const orderPokemonZa = (dataSet)=>{
   const newDataArray = [];
-  for (let i = 0; i < dataSet.length; i += 1) {
+  for (let i = 0; i < dataSet.length; i ++) {
     newDataArray.push(dataSet[i]);
   }
   newDataArray.sort((a, b) => {
@@ -61,3 +43,23 @@ export const orderPokemonZa = (dataSet)=>{
   return newDataArray;
 };
 
+
+//Ordena Pokemones por de manera descendiente 151 al 1
+/* export const orderPokemonDescendant = (dataSet)=>{
+  const newDataArray = [];
+  for (let i = 0; i < dataSet.length; i ++) {
+    newDataArray.push(dataSet[i]);
+  }
+  newDataArray.sort((a, b) => a.num-b.num {
+     if (a.num > b.num) {
+      return - 1;
+     } 
+     if (a.name < b.name) {
+      return 1;
+    }
+    return 0;
+     
+   })
+  return newDataArray;
+
+}; */
