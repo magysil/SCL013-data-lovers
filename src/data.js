@@ -45,10 +45,11 @@ export const orderPokemonZa = (dataSet)=>{
 
 //Ordena Pokemones por de manera descendiente 151 al 1
 export const orderedDataDescendant = (dataSet)=>{
+
   const newDataArray = [];
   for (let i = 0; i < dataSet.length; i ++) {
     newDataArray.push(dataSet[i]);
-  }
+  
   newDataArray.sort((a, b) => parseInt(b.num -a.num)); return newDataArray;
 }; 
 
@@ -77,3 +78,5 @@ export const searchPoke = (dataSet, text) =>{
   });
   return search;
 }
+
+

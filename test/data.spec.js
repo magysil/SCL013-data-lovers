@@ -28,8 +28,7 @@ const arrayAll = [
     gender: "male",
     house: "Gryffindor",
     type: "Water",
-    weaknesses:"Ice",    
-    
+    weaknesses:"Ice", 
   },
 ];
 
@@ -153,12 +152,14 @@ describe("orderedDataDescendant", () => {
 
   test("Ordenar los números de manera descendente", () => {
     expect(orderedDataDescendant(arrayAll)).toStrictEqual(arrayDescendant);
+
   });
 });
 
 describe("filterType", () => {
   test("is a function", () => {
     expect(typeof filterType).toBe("function");
+
   });
 
     test("Filtrar por tipo", () => {
@@ -175,6 +176,5 @@ describe("filterWeakness", () => {
       test("Filtrar por tipo", () => {
       expect(filterWeakness(arrayAll, "Ice")).toEqual([{"num":"003","name": "Ron Weasley", "species": "human",  "gender": "male", "house": "Gryffindor", "type": "Water", "weaknesses": "Ice"}]);
       
-    }); 
-  
+    });   
 });
