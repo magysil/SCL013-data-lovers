@@ -1,48 +1,98 @@
-import { allPokemon, orderPokemonAz, orderPokemonZa } from "../src/data.js";
+import { allPokemon, orderPokemonAz, orderPokemonZa,orderedDataDescendant, filterType, filterWeakness} from "../src/data.js";
 
 const arrayAll = [
   {
+    num:"001",
     name: "Harry Potter",
     species: "human",
     gender: "male",
     house: "Gryffindor",
+    type: "Fire",
+    weaknesses: "Water"
   },
 
   {
+    num:"002",
     name: "Hermione Granger",
     species: "human",
     gender: "female",
     house: "Gryffindor",
+    type: "Ice",
+    weaknesses:"Fire",
   },
 
   {
+    num:"003",
     name: "Ron Weasley",
     species: "human",
     gender: "male",
     house: "Gryffindor",
+    type: "Water",
+    weaknesses:"Ice",    
+    
   },
 ];
 
 const arrayViewAll = [
   {
+    num:"001",
     name: "Harry Potter",
     species: "human",
     gender: "male",
     house: "Gryffindor",
+    type: "Fire",
+    weaknesses: "Water"
   },
 
   {
+    num:"002",
     name: "Hermione Granger",
     species: "human",
     gender: "female",
     house: "Gryffindor",
+    type: "Ice",
+    weaknesses:"Fire",
   },
   {
+    num:"003",
     name: "Ron Weasley",
     species: "human",
     gender: "male",
     house: "Gryffindor",
+    type: "Water",
+    weaknesses:"Ice", 
   },
+];
+
+const arrayDescendant =[
+  {
+    num:"003",
+    name: "Ron Weasley",
+    species: "human",
+    gender: "male",
+    house: "Gryffindor",
+    type: "Water",
+    weaknesses:"Ice", 
+  },
+  {
+    num:"002",
+    name: "Hermione Granger",
+    species: "human",
+    gender: "female",
+    house: "Gryffindor",
+    type: "Ice",
+    weaknesses:"Fire",
+  },
+  {
+    num:"001",
+    name: "Harry Potter",
+    species: "human",
+    gender: "male",
+    house: "Gryffindor",
+    type: "Fire",
+    weaknesses: "Water"
+  },
+
 ];
 
 const arrayOriginal = [
@@ -94,4 +144,37 @@ describe("orderPokemonZa", () => {
   test("Ordenar los nombres de la Z-A", () => {
     expect(orderPokemonZa(arrayOriginal)).toStrictEqual(arrayZa);
   });
+});
+
+describe("orderedDataDescendant", () => {
+  test("is a function", () => {
+    expect(typeof orderedDataDescendant).toBe("function");
+  });
+
+  test("Ordenar los números de manera descendente", () => {
+    expect(orderedDataDescendant(arrayAll)).toStrictEqual(arrayDescendant);
+  });
+});
+
+describe("filterType", () => {
+  test("is a function", () => {
+    expect(typeof filterType).toBe("function");
+  });
+
+    test("Filtrar por tipo", () => {
+    expect(filterType(arrayAll, "Fire")).toEqual([{"num":"001","gender": "male", "house": "Gryffindor", "name": "Harry Potter", "species": "human", "type": "Fire", "weaknesses": "Water"}]);
+  }); 
+
+});
+
+describe("filterWeakness", () => {
+    test("is a function", () => {
+      expect(typeof filterWeakness).toBe("function");
+    });
+  
+      test("Filtrar por tipo", () => {
+      expect(filterWeakness(arrayAll, "Ice")).toEqual([{"num":"003","name": "Ron Weasley", "species": "human",  "gender": "male", "house": "Gryffindor", "type": "Water", "weaknesses": "Ice"}]);
+      
+    }); 
+  
 });
