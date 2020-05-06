@@ -1,3 +1,4 @@
+
 import { allPokemon, orderPokemonAz, orderPokemonZa,orderedDataDescendant, filterType, filterWeakness} from "../src/data.js";
 
 const arrayAll = [
@@ -29,7 +30,6 @@ const arrayAll = [
     house: "Gryffindor",
     type: "Water",
     weaknesses:"Ice",    
-    
   },
 ];
 
@@ -155,7 +155,6 @@ describe("orderedDataDescendant", () => {
     expect(orderedDataDescendant(arrayAll)).toStrictEqual(arrayDescendant);
   });
 });
-
 describe("filterType", () => {
   test("is a function", () => {
     expect(typeof filterType).toBe("function");

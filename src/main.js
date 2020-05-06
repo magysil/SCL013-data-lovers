@@ -22,6 +22,7 @@ let capturar = () => {
 };
 document.getElementById("btnSecondPage").addEventListener("click", capturar);
 
+
 const card = document.getElementById("viewCardCreate");
 
 //Arreglo con todos los datos de Pokemones
@@ -49,16 +50,21 @@ function viewAllPokemon(dataSet) {
                                     )}</h3>
                                     </br>
                                     <h3>Debilidad: ${dataSet[i].weaknesses.join(" - ")} </h3>
+
                                 </div>
                             </div>
                             </div>`;
   }
-  card.innerHTML = cardTemplate;
+  card.innerHTML = cardTemplate;  
 }
+
 
 viewAllPokemon(allData);
 //console.log( allData);
 
+
+viewAllPokemon(allData);
+//console.log( allData);
 //Ordenar pokemones A-Z / Z-A / Regresar a todos
 const selectElement = document.querySelector(".ordenPoke");
 selectElement.addEventListener("change", (e) => {
