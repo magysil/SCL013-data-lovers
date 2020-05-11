@@ -1,5 +1,5 @@
 
-import { allPokemon, orderPokemonAz, orderPokemonZa,orderedDataDescendant, filterType, filterWeakness} from "../src/data.js";
+import { allPokemon, orderPokemonAz, orderPokemonZa,orderedDataDescendant, filterType, filterWeakness, searchPoke} from "../src/data.js";
 
 const arrayAll = [
   {
@@ -156,6 +156,7 @@ describe("orderedDataDescendant", () => {
 
   });
 });
+
 describe("filterType", () => {
   test("is a function", () => {
     expect(typeof filterType).toBe("function");
@@ -176,5 +177,16 @@ describe("filterWeakness", () => {
       test("Filtrar por tipo", () => {
       expect(filterWeakness(arrayAll, "Ice")).toEqual([{"num":"003","name": "Ron Weasley", "species": "human",  "gender": "male", "house": "Gryffindor", "type": "Water", "weaknesses": "Ice"}]);
       
-    });   
-});
+    });
+  });
+
+describe("searchPoke", () => {
+    test("is a function", () => {
+        expect(typeof searchPoke).toBe("function");
+      });
+    
+        test("Buscar Pokemon", () => {
+        expect(searchPoke(arrayAll, "Ron Weasley")).toEqual([{"num":"003","name": "Ron Weasley", "species": "human",  "gender": "male", "house": "Gryffindor", "type": "Water", "weaknesses": "Ice"}]);
+        
+      });      
+  });
