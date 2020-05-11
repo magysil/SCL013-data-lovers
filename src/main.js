@@ -1,4 +1,5 @@
 import Pokemones from "./data/pokemon/pokemon.js";
+
 import {
   allPokemon,
   orderPokemonAz,
@@ -42,6 +43,7 @@ function viewAllPokemon(dataSet) {
                                 <div class='itemsPoke'> 
                                     <h2>${dataSet[i].name}</h2>
                                     <h3>${dataSet[i].num}</h3>
+
                                     <img class="imgPokemon" src="${
                                       dataSet[i].img
                                     }"/>
@@ -61,7 +63,6 @@ function viewAllPokemon(dataSet) {
 
 viewAllPokemon(allData);
 //console.log( allData);
-
 
 viewAllPokemon(allData);
 //console.log( allData);

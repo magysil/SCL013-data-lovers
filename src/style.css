@@ -156,6 +156,7 @@ select{
         border-bottom: none;
     } 
     #filterOption, #filterOption .filterOptionBody {
+
         flex-direction:column;
     } 
     #img-box{
