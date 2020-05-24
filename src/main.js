@@ -1,4 +1,5 @@
 import Pokemones from "./data/pokemon/pokemon.js";
+
 import {
   allPokemon,
   orderPokemonAz,
@@ -34,9 +35,9 @@ document.getElementById("link-home").addEventListener("click", homePage); //ir a
 //Variables manejo de datos
 const card = document.getElementById("viewCardCreate");
 const allData = allPokemon(Pokemones.pokemon); // muestra todo la data
-const orderedDataAz = orderPokemonAz(allData);
+/* const orderedDataAz = orderPokemonAz(allData);
 const orderedDataZa = orderPokemonZa(allData);
-const orderedPokeDescendant = orderedDataDescendant(allData);
+const orderedPokeDescendant = orderedDataDescendant(allData); */
 
 //Muestra todos lo Pokemones en pantalla
 function viewAllPokemon(dataSet) {
