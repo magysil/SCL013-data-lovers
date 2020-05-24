@@ -19,7 +19,7 @@ let capturar = () => {
   document.getElementById("intro").style.display = "none";
   document.getElementById("viewCard").style.display = "";
   document.getElementById("search").style.display = "block";
-  document.getElementById("filterOption").style.display = "";
+  document.getElementById("filterOption").style.display = "block";
 };
 document.getElementById("btnSecondPage").addEventListener("click", capturar); //mostrar segunda panrtalla
 document.getElementById("pokedex").addEventListener("click", capturar); //mostrar segunda panrtalla
@@ -44,7 +44,7 @@ function viewAllPokemon(dataSet) {
   for (let i = 0; i < dataSet.length; i++) {
     cardTemplate += `
                              <div id="elementCard" class="elementCard">
-                             <div id='pokemon${dataSet[i].id}' class="card ${
+                             <div id='pokemon${dataSet[i].id}' class="card${
       dataSet[i].type[0]
     }">
                                 <div id="itemsPoke" class='itemsPoke'> 
@@ -57,11 +57,7 @@ function viewAllPokemon(dataSet) {
                                       " - "
                                     )}</h3>
                                     </br>
-                                    <h3>Debilidad: ${dataSet[i].weaknesses.join(
-                                      " - "
-                                    )} </h3>
-
-                                </div>
+                                  </div>
                             </div>
                             </div>`;
   }
@@ -73,7 +69,7 @@ viewAllPokemon(allData);
 //console.log( allData);
 
 //Ordenar pokemones A-Z / Z-A / 151-1/ Regresar a todos
-const selectElement = document.querySelector(".ordenPoke");
+/* const selectElement = document.querySelector(".ordenPoke");
 selectElement.addEventListener("change", (e) => {
   const resultado = `${e.target.value}`;
   //console.log(resultado);
@@ -88,7 +84,27 @@ selectElement.addEventListener("change", (e) => {
   } else if (resultado === "All") {
     viewAllPokemon(allData);
   }
+}); */
+const selectElement = document.querySelector(".ordenPoke");
+selectElement.addEventListener("change", (e) => {
+  const resultado = `${e.target.value}`;
+  if (resultado === "A-Z"){
+    let result = orderPokemonAz (allData,resultado);
+    viewAllPokemon(result);
+  }
+  if (resultado === "Z-A"){
+    let result = orderPokemonAz (allData,resultado);
+    viewAllPokemon(result);
+  }
+  if (resultado === "151-1") {
+    let result = orderPokemonAz (allData,resultado);
+    viewAllPokemon(result);
+  }
+  else if (resultado === "All") {
+    viewAllPokemon(allData);
+  }
 });
+
 
 //Filtrar Pokemones por Tipo
 const selectType = document.querySelector(".typePoke");
@@ -116,19 +132,17 @@ selectWeakness.addEventListener("change", () => {
   }
 });
 
-//Buscar Pokemon por nombre
+//Buscar Pokemon por nombre 
 const input = document.getElementById("search");
-input.addEventListener("keydown", function () {
-  if (event.which === 13 || event.keyCode === 13 || event.key === "Enter") {
-    event.preventDefault();
-    const name = input.value;
-    const pokeName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-    let chosenPoke = searchPoke(allData, pokeName);
-    if(chosenPoke.length === 0){
-      alert("No Hay Resultados de busqueda")
-    }else
-    viewAllPokemon(chosenPoke);
-  }
+input.addEventListener("keyup", function() {
+      const name = input.value;     
+    const pokeName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();      
+    let chosenPoke = searchPoke(allData,pokeName);
+    if (chosenPoke.length>0){
+       viewAllPokemon(chosenPoke);   
+    }else{
+      alert
+    }
 });
 
 // Mostrar cada pokemon con todas sus caracteristicas
@@ -150,10 +164,14 @@ function modal(e) {
     <div class="contenedor">
       <section class="izquierda">
           <div class="caracteristicaPrincipal">
+              <p>N* Poke</p>
               <p>${e[i].num}</p>
+
               <p>${e[i].name}</p>
+
               <img src="${e[i].img}">
-              <p class="tipo">Tipo: </br>${e[i].type.join(" - ")}</p>
+
+              <p class="tipo">${e[i].type.join(" - ")}</p>
           </div>
       </section>
       <section class="derecha">
@@ -161,30 +179,31 @@ function modal(e) {
               <p>Altura: ${e[i].height}</p>
               <p>Peso: ${e[i].weight}</p>
               <p>Caramelos: ${e[i].candy} </p>
-              <p>Cantidad Caramelos:${e[i].candy_count} </p>
+              <p>Cantidad Caramelos:${e[i].candy_count ? e[i].candy_count: " No tiene"} </p>
           </div>
           <div class="debilidades">
               <p>Debilidad: ${e[i].weaknesses.join(" - ")}</p>
           </div>
       </section>
   </div>
-  <section class="fondo">
-      <div class="subFondo">
-          <p> Pre Evolución: ${
-            e[i].prev_evolution ? e[i].prev_evolution[0].num : "No tiene"
-          }</p> 
-          <p> Pre Evolución: ${
-            e[i].prev_evolution ? e[i].prev_evolution[0].name : "No tiene"
-          }</p> 
-          <p> Evolución: ${
-            e[i].next_evolution ? e[i].next_evolution[0].num : "No tiene"
-          }</p> 
-          <p> Evolución: ${
-            e[i].next_evolution ? e[i].next_evolution[0].name : "No tiene"
-          }</p>
-      </div>
-
+  <div class="fondo">
+  <section class="fondoAux">
+    <div class="subFondo">
+      <p> Pre Evolución: ${
+        e[i].prev_evolution ? e[i].prev_evolution[0].num : "-"
+        }</p>
+      <p> Pre Evolución: ${
+        e[i].prev_evolution ? e[i].prev_evolution[0].name : "No tiene"
+        }</p>
+      <p> Evolución: ${
+        e[i].next_evolution ? e[i].next_evolution[0].num : "-"
+        }</p>
+      <p> Evolución: ${
+        e[i].next_evolution ? e[i].next_evolution[0].name : "No tiene"
+        }</p>
+    </div>
   </section>
+</div>
 </section>`;
       let span = document.getElementsByClassName("close")[0];
       span.addEventListener("click", () => {

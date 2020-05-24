@@ -8,19 +8,20 @@ export const allPokemon = (dataSet) => {
 };
 
 //Ordena Pokemones por nombre de la A a la Z
-export const orderPokemonAz = (dataSet) => {
+export const orderPokemonAz = (dataSet,result) => {
   const newDataArray = [];
   for (let i = 0; i < dataSet.length; i++) {
     newDataArray.push(dataSet[i]);
   }
   newDataArray.sort((a, b) => {
-    if (a.name > b.name) {
-      return 1;
+    if (result === "Z-A" &&  a.name > b.name ) {
+       return -1;
     }
-    if (a.name < b.name) {
+    if (result === "A-Z" && a.name < b.name) {
       return -1;
     }
-    return 0;
+    if (result === "151-1" )
+    return parseInt(b.num - a.num);
   });
   return newDataArray;
 };

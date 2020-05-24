@@ -15,7 +15,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #a8dd9c 0%, #24ccaa 100%);
+  background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
 }
 
 .navigation {
@@ -79,7 +79,7 @@ header {
   border-width: 0px;
   width: 200px;
   padding: 2%;
-  background: linear-gradient(90deg, #a8dd9c 0%, #24ccaa 100%);
+  background: linear-gradient(90deg,  #43cea2 0%, #185a9d 100%);
   border-radius: 100px;
   font-size: 18px;
   line-height: 22px;
@@ -123,23 +123,36 @@ select {
   width: 180px;
   text-align: center;
   padding: 25px 0;
-  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
-    #d9ecdc;
+  background: linear-gradient(180deg, #f2f2f2 0%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 1.94667px 2.92px 3.89333px rgba(0, 0, 0, 0.25);
+  border-radius: 9.73333px;
+  margin: 40px;
+  border: #329fa0 solid 2.5px;
+}
+.itemsPoke:hover {
+ height: 120%;
+  width: 200px;
+  text-align: center;
+  padding: 25px 0;
+  background: linear-gradient(180deg, #e0d9d9 0%, rgba(255, 255, 255, 0) 100%);
   box-shadow: 1.94667px 2.92px 3.89333px rgba(0, 0, 0, 0.25);
   border-radius: 9.73333px;
   margin: 40px;
   border: #8fda9f solid 2.5px;
+  transform: scale(1.1);
 }
+
 /* Inicio Modal*/
 /* Fondo del la Tarjeta de Caracteristicas Adicionales */
+
 #principalModal {
   position: fixed;
   display: none;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   top: 50%;
   left: 50%;
-  padding-top: 160px;
+  padding-top: 8.5%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
@@ -150,12 +163,12 @@ select {
   box-shadow: 15px 15px 10px -8px rgba(0, 0, 0, 0.75);
 }
 .cardContent {
-  width: 600px;
-  height: 500px;
-  background-color: #fff;
+  width: 60vw;
+  height: 75vh; 
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
 }
 .close {
   text-align: right;
@@ -165,8 +178,12 @@ select {
 }
 
 .tarjetaPrincipal {
-  width: 100%;
-  height: 100%;
+  display: flex;
+    width: 75%;
+    height: 85%;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #A8DD9C;
+    border-radius: 15px;
+    flex-direction: column;
 }
 .derecha {
   display: flex;
@@ -176,8 +193,8 @@ select {
 }
 .izquierda {
   display: flex;
-  width: 30%;
-  justify-content: center;
+
+
 }
 .caracteristicasSecundarias,
 .debilidades {
@@ -197,7 +214,9 @@ select {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin:30px;
 }
+
 .debilidades {
   height: 25%;
   display: flex;
@@ -210,15 +229,11 @@ select {
   height: 70%;
 }
 .fondo {
-  height: 30%;
-
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.subFondo img {
-  width: 130px;
-  height: auto;
+  flex-direction: column;
 }
 .caracteristicaPrincipal p,
 .caracteristicasSecundarias p,
@@ -231,6 +246,100 @@ select {
   width: 150px;
   height: auto;
 }
+
+/*Bordes Card*/
+.cardGrass .itemsPoke{
+border: #03b246 solid 1px;
+}  
+.cardPoison .itemsPoke{
+border: #ee00d0 solid 2.5px;
+}
+.cardNormal .itemsPoke{
+border: #dadada solid 2.5px;
+}
+.cardFire .itemsPoke{
+border: #fa0a03 solid 2.5px;
+}
+.cardWater .itemsPoke{
+border: #159bd8 solid 2.5px;
+}
+.cardIce .itemsPoke{
+border: #b4f8d0 solid 2.5px;
+}
+.cardGround .itemsPoke{
+border: #ffc101 solid 2.5px;
+}
+.cardRock .itemsPoke{
+border: #d28f00 solid 2.5px;
+}
+.cardBug .itemsPoke{
+border: #6ed142 solid 2.5px;
+}
+.cardElectric .itemsPoke{
+border: #fffd00 solid 2.5px;
+}
+.cardFighting .itemsPoke{
+border: #e00001 solid 2.5px;
+}
+.cardFlying .itemsPoke{
+border: #00b1f4 solid 2.5px;
+}
+.cardPsychic .itemsPoke{
+border: #ff389d solid 2.5px;
+}
+.cardGhost .itemsPoke{
+border: #001a61 solid 2.5px;
+}
+.cardDragon .itemsPoke{
+border: #7e2ea1 solid 2.5px;
+}
+ /*Borde Hover*/
+ .cardGrass .itemsPoke:hover{
+  border: #03b246 solid 1px;
+  }  
+  .cardPoison .itemsPoke:hover{
+  border: #ee00d0 solid 2.5px;
+  }
+  .cardNormal .itemsPoke:hover{
+  border: #dadada solid 2.5px;
+  }
+  .cardFire .itemsPoke:hover{
+  border: #fa0a03 solid 2.5px;
+  }
+  .cardWater .itemsPoke:hover{
+  border: #159bd8 solid 2.5px;
+  }
+  .cardIce .itemsPoke:hover{
+  border: #b4f8d0 solid 2.5px;
+  }
+  .cardGround .itemsPoke:hover{
+  border: #ffc101 solid 2.5px;
+  }
+  .cardRock .itemsPoke:hover{
+  border: #d28f00 solid 2.5px;
+  }
+  .cardBug .itemsPoke:hover{
+  border: #6ed142 solid 2.5px;
+  }
+  .cardElectric .itemsPoke:hover{
+  border: #fffd00 solid 2.5px;
+  }
+  .cardFighting .itemsPoke:hover{
+  border: #e00001 solid 2.5px;
+  }
+  .cardFlying .itemsPoke:hover{
+  border: #00b1f4 solid 2.5px;
+  }
+  .cardPsychic .itemsPoke:hover{
+  border: #ff389d solid 2.5px;
+  }
+  .cardGhost .itemsPoke:hover{
+  border: #001a61 solid 2.5px;
+  }
+  .cardDragon .itemsPoke:hover{
+  border: #7e2ea1 solid 2.5px;
+  }
+
 
 /* Fin Modal*/
 
